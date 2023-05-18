@@ -1,0 +1,8 @@
+
+#minio配置
+minio:
+  #服务地址，存储桶，用户名，密码
+  url: http://192.168.145.100:9000
+  bucketName: test
+  accessKey: zv4qmz1m5v43rsOq
+  secretKey: elgT3HSdrBK5fiTzKbqTimGNlXVpRm4j
