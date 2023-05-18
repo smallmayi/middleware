@@ -32,7 +32,8 @@ public class FileImpl implements FileService {
         //判断桶是否存在，不存在就创建
         MinioUtil.createBucket(minConfig.getBucketName());
         MinioUtil.uploadFile(inputStream, minConfig.getBucketName(), fileName);
-        inputStream.close();
+        //关闭流一般需要判断null，可以直接用IOUtils
+        IOUtils.closeQuietly(inputStream);
         //返回文件存储地址
         String url = minConfig.getUrl() + "/" + minConfig.getBucketName() + "/" + fileName;
         return url;
@@ -46,7 +47,8 @@ public class FileImpl implements FileService {
         response.setCharacterEncoding("UTF-8");
         InputStream inputStream = MinioUtil.download(minConfig.getBucketName(), fileName);
         IOUtils.copy(inputStream, response.getOutputStream());
-        inputStream.close();
+        //关闭流一般需要判断null，可以直接用IOUtils
+        IOUtils.closeQuietly(inputStream);
     }
 
     @Override
