@@ -11,6 +11,8 @@ import java.util.List;
 
 /**
  * @author smallmayi
+ *
+ * minio文件基础操作
  */
 @RestController
 @RequestMapping("/file")
