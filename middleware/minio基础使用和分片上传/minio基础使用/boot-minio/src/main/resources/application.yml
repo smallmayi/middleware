@@ -2,7 +2,7 @@
 #minio配置
 minio:
   #服务地址，存储桶，用户名，密码
-  url: http://xxx
+  url: xxx
   bucketName: test
   accessKey: xxx
   secretKey: xxx
